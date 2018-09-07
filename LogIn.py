@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter
 
-
 class LogIn:
 
     window = tkinter.Tk()
@@ -17,7 +16,7 @@ class LogIn:
     e1.grid(row = 0, column = 1)
     e2.grid(row = 1, column = 1)
 
-    login = Button(window, text = "Log In")
+    login = Button(window, text = "Log In", command = "")
     forgot = Button(window, text = "Forgot Password")
 
     login.grid(row = 3, column = 0, sticky = "W", pady =  8)
