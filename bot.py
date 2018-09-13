@@ -203,6 +203,8 @@ class Bot:
 
 # test = Bot("cashmoneycarl", "clvjr1666")
 # test = Bot("shadypingu_", "@AACwfgh6gm*3YJS")
+
+
 test = Bot("gmunsbe", "strive505")
 test.selfFollowing()
 test.selfFollowers()

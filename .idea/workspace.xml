@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fba39da7-4fcb-4be2-aab3-afe6c4f0abac" name="Default" comment="">
+    <list default="true" id="fba39da7-4fcb-4be2-aab3-afe6c4f0abac" name="Default" comment="Implemented a steal followers method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
     </list>
@@ -23,8 +23,8 @@
       <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+            <state relative-caret-position="182">
+              <caret line="146" column="67" lean-forward="true" selection-start-line="146" selection-start-column="67" selection-end-line="146" selection-end-column="67" />
               <folding>
                 <element signature="e#1000#1214#0" expanded="false" />
                 <element signature="e#1302#1519#0" expanded="false" />
@@ -301,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536339098515</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implemented a steal followers method">
+      <created>1536801604240</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536801604240</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -342,7 +349,8 @@
     <MESSAGE value="Changed gui.py to login.py" />
     <MESSAGE value="Added a new file" />
     <MESSAGE value="Working solely on the guiy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working solely on the guiy" />
+    <MESSAGE value="Implemented a steal followers method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented a steal followers method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="181" column="0" lean-forward="true" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="146" column="67" lean-forward="true" selection-start-line="146" selection-start-column="67" selection-end-line="146" selection-end-column="67" />
           <folding>
             <element signature="e#1000#1214#0" expanded="false" />
             <element signature="e#1302#1519#0" expanded="false" />
