@@ -1,4 +1,5 @@
 from InstagramAPI import *
+import getpass
 
 
 class Bot:
@@ -180,10 +181,13 @@ class Bot:
         print(x)
     '''
 
+# The bot running
 
-username = input("What is your username\n")
-password = input("What is you password\n")
-create = Bot(username, password)
+
+username2 = input("What is your username\n")
+password2 = input("What is your password")
+# password = getpass.getpass(prompt="What's your password?")
+create = Bot(username2, password2)
 while True:
         print("\n----------------------------------------------------------------")
         print("|1. Follow all users who you are not following back.            |")
@@ -211,19 +215,9 @@ while True:
             break
 
 '''
-# test = Bot("cashmoneycarl", "clvjr1666")
-# test = Bot("shadypingu_", "@AACwfgh6gm*3YJS")
+test = Bot("cashmoneycarl", "clvjr1666")
+test = Bot("shadypingu_", "@AACwfgh6gm*3YJS")
 test = Bot("shady.flow", "056357287042")
-
-# test = Bot("gmunsbe", "strive505")
-test.selfFollowing()
-test.selfFollowers()
-test.stealFollowers()
-print(test.usersToFollow)
-print("-------------------------------------------")
-test.gain()
-print(test.usersToFollow)
 '''
-
 
 
