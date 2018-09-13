@@ -180,32 +180,42 @@ class Bot:
         print(x)
     '''
 
-    '''
-        while True:
-                print("\n----------------------------------------------------------------")
-                print("|1. Follow all users who you are not following back.            |")
-                print("|2. Unfollow all users who are not following you back.          |")
-                print("|3. Exit                                                        |")
-                print("-----------------------------------------------------------------")
-                choice = int(input("What would you like to do?\n"))
-    
-                if choice == 1:
-                    followNotFollowingBack()
-                    print("First")
-                elif choice == 2:
-                    unfollowNotFollowingBack()
-                    print("Second")
-                elif choice == 3:
-                    print("Third")
-                    session.logout()
-                    break
-    '''
 
+username = input("What is your username\n")
+password = input("What is you password\n")
+create = Bot(username, password)
+while True:
+        print("\n----------------------------------------------------------------")
+        print("|1. Follow all users who you are not following back.            |")
+        print("|2. Unfollow all users who are not following you back.          |")
+        print("|3. Steal and gain followers from your user of choice           |")
+        print("|4. Exit                                                        |")
+        print("-----------------------------------------------------------------")
+        choice = int(input("What would you like to do?\n"))
+
+        if choice == 1:
+            print("Following users who you are not following back")
+            create.followNotFollowingBack()
+        elif choice == 2:
+            print("Unfollowing users who are not following you back")
+            create.unfollowNotFollowingBack()
+        elif choice == 3:
+            print("Starting to copy followers")
+            create.selfFollowing()
+            create.selfFollowers()
+            create.stealFollowers()
+            create.gain()
+            print("Done copying followers")
+        elif choice == 4:
+            create.session.logout()
+            break
+
+'''
 # test = Bot("cashmoneycarl", "clvjr1666")
 # test = Bot("shadypingu_", "@AACwfgh6gm*3YJS")
+test = Bot("shady.flow", "056357287042")
 
-
-test = Bot("gmunsbe", "strive505")
+# test = Bot("gmunsbe", "strive505")
 test.selfFollowing()
 test.selfFollowers()
 test.stealFollowers()
@@ -213,7 +223,7 @@ print(test.usersToFollow)
 print("-------------------------------------------")
 test.gain()
 print(test.usersToFollow)
-
+'''
 
 
 
