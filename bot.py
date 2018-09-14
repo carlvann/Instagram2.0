@@ -1,5 +1,4 @@
 from InstagramAPI import *
-import getpass
 
 
 class Bot:
@@ -16,12 +15,10 @@ class Bot:
     nonFollowingNames = []  # Dictionary of people that I do not follow
     nonFollowingIDs = []  # Dictionary of people that I do not follow
 
-    def __init__(self, username, password):
-        # self.username = input("What is your username?\n")
-        # self.password = input("What is your password?\n")
-        self.username = username
-        self.password = password
-        self.session = InstagramAPI(username, password)
+    def __init__(self):
+        self.username = input("What is your username?\n")
+        self.password = input("What is your password?\n")
+        self.session = InstagramAPI(self.username, self.password)
         self.session.login()
 
     # Generates a list of people that are following me
@@ -181,43 +178,42 @@ class Bot:
         print(x)
     '''
 
+    def start(self):
+        # create = Bot(username2, password2)
+        while True:
+                print("\n----------------------------------------------------------------")
+                print("|1. Follow all users who you are not following back.            |")
+                print("|2. Unfollow all users who are not following you back.          |")
+                print("|3. Steal and gain followers from your user of choice           |")
+                print("|4. Exit                                                        |")
+                print("-----------------------------------------------------------------")
+                choice = int(input("What would you like to do?\n"))
+                if choice == 1:
+                    print("Following users who you are not following back")
+                    self.followNotFollowingBack()
+                elif choice == 2:
+                    print("Unfollowing users who are not following you back")
+                    self.selfFollowers()
+                    self.selfFollowing()
+
+                    self.unfollowNotFollowingBack()
+                elif choice == 3:
+                    print("Starting to copy followers")
+                    self.selfFollowing()
+                    self.selfFollowers()
+                    self.stealFollowers()
+                    self.gain()
+                    print("Done copying followers")
+                elif choice == 4:
+                    self.session.logout()
+                    break
+
 # The bot running
-
-
-username2 = input("What is your username\n")
-password2 = input("What is your password")
-# password = getpass.getpass(prompt="What's your password?")
-create = Bot(username2, password2)
-while True:
-        print("\n----------------------------------------------------------------")
-        print("|1. Follow all users who you are not following back.            |")
-        print("|2. Unfollow all users who are not following you back.          |")
-        print("|3. Steal and gain followers from your user of choice           |")
-        print("|4. Exit                                                        |")
-        print("-----------------------------------------------------------------")
-        choice = int(input("What would you like to do?\n"))
-
-        if choice == 1:
-            print("Following users who you are not following back")
-            create.followNotFollowingBack()
-        elif choice == 2:
-            print("Unfollowing users who are not following you back")
-            create.unfollowNotFollowingBack()
-        elif choice == 3:
-            print("Starting to copy followers")
-            create.selfFollowing()
-            create.selfFollowers()
-            create.stealFollowers()
-            create.gain()
-            print("Done copying followers")
-        elif choice == 4:
-            create.session.logout()
-            break
-
 '''
 test = Bot("cashmoneycarl", "clvjr1666")
 test = Bot("shadypingu_", "@AACwfgh6gm*3YJS")
 test = Bot("shady.flow", "056357287042")
 '''
+
 
 

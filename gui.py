@@ -33,7 +33,5 @@ Engage.config(font=("Courier", 32))
 Engage.place(x=20, y=450)
 
 
-
-
 window.geometry("900x600")
 window.mainloop()
