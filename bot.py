@@ -148,36 +148,6 @@ class Bot:
         for x in usersToRemove:
             self.usersToFollow.remove(x)
 
-    '''
-    # Getting followers
-    list = session.getTotalSelfFollowers()
-    
-    for x in list:
-        followerNames.append(x['username'])
-        followerIDs.append(x['pk'])
-    
-    
-    for x in followerNames:
-        print(x)
-    
-    for x in followerIDs:
-        print(x)
-    
-    # Getting followings
-    
-    list = session.getTotalSelfFollowings()
-    
-    for x in list:
-        followingNames.append(x['username'])
-        followingIDs.append(x['pk'])
-    
-    for x in followingNames:
-        print(x)
-    
-    for x in followingIDs:
-        print(x)
-    '''
-
     def start(self):
         # create = Bot(username2, password2)
         while True:
