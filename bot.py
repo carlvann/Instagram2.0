@@ -1,4 +1,5 @@
 from InstagramAPI import *
+from getpass import getpass
 
 
 class Bot:
@@ -17,7 +18,8 @@ class Bot:
 
     def __init__(self):
         self.username = input("What is your username?\n")
-        self.password = input("What is your password?\n")
+        # self.password = input("What is your password?\n")
+        self.password = getpass("What is your password?\n")
         self.session = InstagramAPI(self.username, self.password)
         self.session.login()
 
@@ -131,6 +133,8 @@ class Bot:
             if x not in self.followingsID:
                 self.usersToFollow.append(x)
 
+        print(len(otherFollowers))
+
     def gain(self):
         usersToRemove = []
         counter = 0
@@ -140,13 +144,33 @@ class Bot:
             self.session.follow(self.usersToFollow[x])
             counter += 1
             usersToRemove.append(self.usersToFollow[x])
-            if counter == 100:
+            if counter == 150:
                 break
             print("UsersToFollow: " + str(len(self.usersToFollow)))
             print("Counter: " + str(counter))
 
         for x in usersToRemove:
             self.usersToFollow.remove(x)
+
+    def massLike(self):
+        pictures = []
+        last_num = 0
+        temp = -1
+        user_id = input("Which user's pictures would you like to like?\n")
+        self.session.searchUsername(user_id)
+        user_id = self.session.LastJson["user"]["pk"]
+        while True:
+            self.session.getUserFeed(user_id)
+            print("Temp = " + str(temp) + ". Last Num = " + str(last_num))
+            # if temp == last_num:
+            #    print("Here")
+            #    break
+            for x in self.session.LastJson['items']:
+                if x['id'] not in pictures:
+                    pictures.append(x['id'])
+            temp = last_num
+            last_num = len(pictures)
+        print(len(pictures))
 
     def start(self):
         # create = Bot(username2, password2)
@@ -184,6 +208,16 @@ test = Bot("cashmoneycarl", "clvjr1666")
 test = Bot("shadypingu_", "@AACwfgh6gm*3YJS")
 test = Bot("shady.flow", "056357287042")
 '''
+
+
+# Testing
+test = Bot()
+print("My followers are: " + str(len(test.followersID)) + ". I expected: " + str(0))
+print("My followings are: " + str(len(test.followingsID)) + ". I expected: " + str(0))
+test.selfFollowing()
+test.selfFollowers()
+print("My followers are: " + str(len(test.followersID)) + ". I expected: " + str(921))
+print("My followings are: " + str(len(test.followingsID)) + ". I expected: " + str(1048))
 
 
 
